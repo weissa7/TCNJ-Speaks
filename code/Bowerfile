@@ -1,5 +1,0 @@
-asset 'angular'
-asset 'angular-ui-router'
-asset 'bootstrap-sass-official'
-asset 'components-font-awesome'
-# vim: ft=ruby
