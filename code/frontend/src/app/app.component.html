@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <h1>
     Welcome to {{title}} TCNJ Speaks!
   </h1>
@@ -16,5 +16,32 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul>-->
 
+<!-- Component is the global view of the application. The navbar will be visible on all pages. -->
+<!-- 
+<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
+	<a class="navbar-brand" href="#/home"><i class="fa fa-home"></i>TCNJ-Speaks</a>
+   	<a class="nav-link" href="#">Test</a>
+</nav> 
+-->
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" uiSref="home"><i class="fa fa-home"></i> TCNJ-Speaks</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav pull-right">
+                    <li><a uiSref="report"><i class="fa fa-flag"></i> Report</a></li>
+                    <li><a uiSref="statistics"><i class="fa fa-line-chart"></i> View Statistics</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<ui-view></ui-view>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { StateService } from '@uirouter/core';
 
 @Component({
   selector: 'app-root',
