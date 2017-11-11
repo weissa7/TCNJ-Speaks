@@ -13,12 +13,14 @@ import { APP_STATES } from './app.states';
 import { routerConfigFn } from './router.config';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './report/report.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ReportComponent
+    ReportComponent,
+    StatisticsComponent
   ],
   imports: [
   	UIRouterModule.forRoot({

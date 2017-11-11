@@ -1,6 +1,7 @@
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './report/report.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 /**
  * This is the parent state for the entire application.
@@ -33,8 +34,16 @@ export const reportState = {
   component: ReportComponent,
 };
 
+export const statisticsState = {
+  parent: 'app',
+  name: 'statistics',
+  url: '/statistics',
+  component: StatisticsComponent,
+};
+
 export const APP_STATES = [
   appState,
   homeState,
-  reportState
+  reportState,
+  statisticsState
 ];
