@@ -1,3 +1,14 @@
+/* Name: Aaron Weiss
+ * Course: CSC-415
+ * Semester: Fall 2017
+ * Instructor: Dr. Pulimood
+ * Project Name: TCNJ-Speaks
+ * Project Description: Bring awareness to community about relevant social justice issues.
+ * File Name: app.states.ts
+ * File Description: Defines states of the application to provide routing capabilities.
+ * Last Modified: 11/10/17 (m/d/y)
+*/
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './report/report.component';
