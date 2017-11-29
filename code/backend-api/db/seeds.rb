@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Issue.create!([
+                  {title: 'Issue 1', description: 'Description 1'},
+                  {title: 'Issue 2', description: 'Description 2'}
+              ])
