@@ -10,6 +10,8 @@
 */
 
 import { Component, OnInit } from '@angular/core';
+//Import HttpClient for API access
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-statistics',
@@ -17,10 +19,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
-
-  constructor() { }
+  issues;
+  constructor(private http: HttpClient) { 	
+  }
 
   ngOnInit() {
+  	//Gather data from backend on issues
+  	this.http.get('http://localhost:3000/issues')
+	  .subscribe(data => { this.issues = data});
   }
 
 }

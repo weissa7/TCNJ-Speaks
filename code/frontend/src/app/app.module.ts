@@ -25,6 +25,8 @@ import { routerConfigFn } from './router.config';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './report/report.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+// Import HttpClientModule for Rails server communication
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
       config: routerConfigFn,
     }),
     BrowserModule,
+    HttpClientModule, //Must be defined after BrowserModule
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],
