@@ -25,7 +25,7 @@ class IssuesController < ApplicationController
     end
   end
 
-  # POST /issues
+  # POST /issue/upvote
   def upvote
     @issue = Issue.find(params[:id])
     @vote = @issue.vote

@@ -34,11 +34,11 @@
 						<td class="align-middle text-center col-md-6">
 							{{ issue.description }}
 						<td class="align-middle text-center col-md-1">
-							<i >+165</i>
+							<i> + </i>
 						</td>
 						<td class="align-middle text-center col-md-2">
-							<button type="button" class="btn btn-success">Agree</button>
-							<button type="button" class="btn btn-danger">Disagree</button>
+							<button type="button" class="btn btn-default" (click)="upvote(issue)">Agree</button>
+							<button type="button" class="btn btn-default" (click)="downvote(issue)">Disagree</button>
 						</td>
 					</tr>
 				</tbody>

@@ -27,4 +27,22 @@ export class StatisticsComponent implements OnInit {
   	this.http.get('http://localhost:3000/issues')
 	  .subscribe(data => { this.issues = data});
   }
+
+  upvote(issue) {
+  	console.log("Upvoting", issue);
+  	const req = this.http.put('http://localhost:3000/issue/' + issue.id + 'upvote', issue)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log("Error occured");
+        }
+      );
+  }
+
+  downvote(issue) {
+  	console.log("Downvoting", issue);
+  }
+
 }
