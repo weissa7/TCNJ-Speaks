@@ -10,6 +10,10 @@
 */
 
 import { Component, OnInit } from '@angular/core';
+//Import HttpClient for API access
+import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { StateService } from '@uirouter/core';
 
 @Component({
   selector: 'app-report',
@@ -18,9 +22,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportComponent implements OnInit {
 
-  constructor() { }
+  submitted = false;
+  constructor(private http: HttpClient, public stateService: StateService) { }
 
-  ngOnInit() {
+  onSubmit (form: any) {
+  	console.log(form);
+  	const req = this.http.post('http://localhost:3000/issues', {
+      title: form.title,
+      description: form.description
+    })
+      .subscribe(
+        res => {
+          console.log(res);
+          this.submitted = true;
+          this.stateService.go('statistics');
+        },
+        err => {
+          console.log("Error occured");
+        }
+      );
   }
+
+  ngOnInit() { }
 
 }

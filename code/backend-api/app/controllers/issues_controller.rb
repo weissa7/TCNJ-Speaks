@@ -6,6 +6,7 @@ class IssuesController < ApplicationController
     @issues = Issue.all
 
     render json: @issues
+
   end
 
   # GET /issues/1
@@ -22,6 +23,12 @@ class IssuesController < ApplicationController
     else
       render json: @issue.errors, status: :unprocessable_entity
     end
+  end
+
+  # POST /issues
+  def upvote
+    @issue = Issue.find(params[:id])
+    @vote = @issue.vote
   end
 
   # PATCH/PUT /issues/1

@@ -20,13 +20,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StatisticsComponent implements OnInit {
   issues;
-  constructor(private http: HttpClient) { 	
-  }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   	//Gather data from backend on issues
   	this.http.get('http://localhost:3000/issues')
 	  .subscribe(data => { this.issues = data});
   }
-
 }

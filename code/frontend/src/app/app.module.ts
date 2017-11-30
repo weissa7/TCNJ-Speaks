@@ -27,6 +27,7 @@ import { ReportComponent } from './report/report.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 // Import HttpClientModule for Rails server communication
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     BrowserModule,
     HttpClientModule, //Must be defined after BrowserModule
+    FormsModule,
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],
