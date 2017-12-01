@@ -24,7 +24,7 @@ export class ReportComponent implements OnInit {
 
   submitted = false;
   constructor(private http: HttpClient, public stateService: StateService) { }
-
+  
   onSubmit (form: any) {
   	console.log(form);
   	const req = this.http.post('http://localhost:3000/issues', {

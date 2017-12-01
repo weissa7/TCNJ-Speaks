@@ -19,11 +19,12 @@
 
 	<div class="jumbotron-fluid text-center">
 		<hr class="my-4">
-		<p>Stats go here</p>
+		<p>Stats go here pls</p>
+		Yet
 		<hr class="my-4">
 	</div>
 
-	<div *ngFor="let issue of issues" class="container-fluid">
+	<div *ngFor="let issue of issues " class="container-fluid">
 		<div class="drop-shadow img-rounded">
 			<table class="table table-bordered">
 				<tbody>
@@ -34,6 +35,7 @@
 						<td class="align-middle text-center col-md-6">
 							{{ issue.description }}
 						<td class="align-middle text-center col-md-1">
+				
 							<i> +{{ issue.upvotes.length }}</i> / <i> -{{ issue.downvotes.length }}</i>
 						</td>
 						<td class="align-middle text-center col-md-2">

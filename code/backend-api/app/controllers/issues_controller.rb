@@ -3,7 +3,7 @@ class IssuesController < ApplicationController
 
   # GET /issues
   def index
-    @issues = Issue.all
+    @issues = Issue.all.sort_by { |d| d.score}.reverse!
 
     #render json: @issues
     render :json => @issues.to_json(:include => [:upvotes, :downvotes])

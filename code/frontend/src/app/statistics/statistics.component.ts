@@ -12,6 +12,7 @@
 import { Component, OnInit } from '@angular/core';
 //Import HttpClient for API access
 import { HttpClient } from '@angular/common/http';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-statistics',
@@ -20,12 +21,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StatisticsComponent implements OnInit {
   issues;
-  constructor(private http: HttpClient) { }
+
+
+
+  constructor(private http: HttpClient) {
+    //Gather data from backend on issues
+    this.http.get('http://localhost:3000/issues')
+    .subscribe(data => { this.issues = data});
+
+  }
 
   ngOnInit() {
   	//Gather data from backend on issues
-  	this.http.get('http://localhost:3000/issues')
-	  .subscribe(data => { this.issues = data});
+  	//this.http.get('http://localhost:3000/issues')
+	  //.subscribe(data => { this.issues = data});
+    
   }
 
   upvote(issue) {

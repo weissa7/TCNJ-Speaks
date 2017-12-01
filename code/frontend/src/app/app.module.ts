@@ -28,6 +28,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 // Import HttpClientModule for Rails server communication
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FormsModule }   from '@angular/forms';
     BrowserModule,
     HttpClientModule, //Must be defined after BrowserModule
     FormsModule,
+    NgxChartsModule,
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],
