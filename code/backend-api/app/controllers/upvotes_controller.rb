@@ -9,9 +9,4 @@ class UpvotesController < ApplicationController
   def destroy
   end
 
-  private
-
-  def secure_params
-    params.require(:upvote)
-  end
 end

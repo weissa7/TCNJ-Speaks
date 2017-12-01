@@ -6,7 +6,7 @@ class IssuesController < ApplicationController
     @issues = Issue.all
 
     #render json: @issues
-    render :json => @issues.to_json(:include => :upvotes)
+    render :json => @issues.to_json(:include => [:upvotes, :downvotes])
   end
 
   # GET /issues/1

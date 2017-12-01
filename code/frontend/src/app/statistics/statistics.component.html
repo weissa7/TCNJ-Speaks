@@ -34,7 +34,7 @@
 						<td class="align-middle text-center col-md-6">
 							{{ issue.description }}
 						<td class="align-middle text-center col-md-1">
-							<i> + {{ issue.upvotes.length }} </i>
+							<i> +{{ issue.upvotes.length }}</i> / <i> -{{ issue.downvotes.length }}</i>
 						</td>
 						<td class="align-middle text-center col-md-2">
 							<button type="button" class="btn btn-default" (click)="upvote(issue)">Agree</button>

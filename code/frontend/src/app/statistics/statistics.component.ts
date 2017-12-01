@@ -43,6 +43,15 @@ export class StatisticsComponent implements OnInit {
 
   downvote(issue) {
   	console.log("Downvoting", issue);
+  	const req = this.http.post('http://localhost:3000/issues/' + issue.id + '/downvotes', issue)
+      .subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log("Error occured");
+        }
+      );
   }
 
 }
