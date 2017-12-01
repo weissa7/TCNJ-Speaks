@@ -17,6 +17,16 @@
 
 # Allow rails application to receive requests from local resources
 
+# Name: Aaron Weiss
+# Course: CSC-415
+# Semester: Fall 2017
+# Instructor: Dr. Pulimood
+# Project Name: TCNJ-Speaks
+# Project Description: Bring awareness to community about relevant social justice issues.
+# File Name: cors.rb
+# File Description: Allows frontend to communicate to backend via API calls.
+# Last Modified: 12/01/17 (m/d/y)
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins '*'
