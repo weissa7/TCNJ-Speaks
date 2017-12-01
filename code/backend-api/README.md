@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README covers the Ruby On Rails portion of TCNJ-Speaks.
 
-Things you may want to cover:
+## Ruby version - 2.4.2p198
 
-* Ruby version
+## System dependencies - Ruby, Rails
 
-* System dependencies
+## Configuration
 
-* Configuration
+TCNJ-Speaks\code\backend-api
+bundle install
+rails server
 
-* Database creation
+## Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rails db:create
+rails db:migrate
