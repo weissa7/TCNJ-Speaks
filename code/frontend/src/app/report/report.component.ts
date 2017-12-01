@@ -9,6 +9,8 @@
  * Last Modified: 11/10/17 (m/d/y)
 */
 
+/* Created by Aaron Weiss. */
+
 import { Component, OnInit } from '@angular/core';
 //Import HttpClient for API access
 import { HttpClient } from '@angular/common/http';

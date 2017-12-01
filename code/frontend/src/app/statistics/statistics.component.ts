@@ -9,6 +9,8 @@
  * Last Modified: 12/01/17 (m/d/y)
 */
 
+/* Created by Aaron Weiss. */
+
 import { Component, OnInit} from '@angular/core';
 //Import HttpClient for API access
 import { HttpClient } from '@angular/common/http';
@@ -33,7 +35,7 @@ export class StatisticsComponent implements OnInit {
     this.pullNewData();
 
     //Delayed call to update chart. Needed to populate chart correctly.
-    setTimeout(()=>{this.show = true, this.updateChart()}, 140);
+    setTimeout(()=>{this.show = true, this.updateChart()}, 240);
   }
 
   ngOnInit() { }
@@ -56,7 +58,7 @@ export class StatisticsComponent implements OnInit {
         res => {
           console.log(res);
           this.pullNewData();
-          setTimeout(()=>{this.show = true, this.updateChart()}, 140);
+          setTimeout(()=>{this.show = true, this.updateChart()}, 10);
         },
         err => {
           console.log("Error occured");
@@ -74,7 +76,7 @@ export class StatisticsComponent implements OnInit {
         res => {
           console.log(res);
           this.pullNewData();
-          setTimeout(()=>{this.show = true, this.updateChart()}, 140);
+          setTimeout(()=>{this.show = true, this.updateChart()}, 10);
         },
         err => {
           console.log("Error occured");

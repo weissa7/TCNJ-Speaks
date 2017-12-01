@@ -8,6 +8,7 @@
  * File Description: Defines states of the application to provide routing capabilities.
  * Last Modified: 11/10/17 (m/d/y)
 */
+/* Created for UI-Router capabilities. */
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -29,7 +30,6 @@ export const appState = {
 
 /**
  * This is the home screen.
- *
  */
 export const homeState = {
   parent: 'app',
