@@ -58,7 +58,7 @@ export class StatisticsComponent implements OnInit {
         res => {
           console.log(res);
           this.pullNewData();
-          setTimeout(()=>{this.show = true, this.updateChart()}, 10);
+          setTimeout(()=>{this.show = true, this.updateChart()}, 240);
         },
         err => {
           console.log("Error occured");
@@ -76,7 +76,7 @@ export class StatisticsComponent implements OnInit {
         res => {
           console.log(res);
           this.pullNewData();
-          setTimeout(()=>{this.show = true, this.updateChart()}, 10);
+          setTimeout(()=>{this.show = true, this.updateChart()}, 240);
         },
         err => {
           console.log("Error occured");
