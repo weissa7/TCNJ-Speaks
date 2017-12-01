@@ -44,7 +44,7 @@ export class StatisticsComponent implements OnInit {
    * Grab current JSON data from API.
    */
   pullNewData() {
-    this.http.get('http://localhost:3000/issues')
+    this.http.get('http://10.18.8.123:3000/issues')
     .subscribe(data => { this.issues = data});
   }
 
