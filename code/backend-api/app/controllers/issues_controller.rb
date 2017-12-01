@@ -3,6 +3,13 @@ class IssuesController < ApplicationController
 
   # GET /issues
   def index
+    # *********
+    # Known Bug
+    # *********
+    # Sorting the issues on the backend side is a BAD practice.
+    # This causes inconsistencies in colorings of graphed issues and is not very RESTful.
+    # Bug will be fixed if this sort occurs on the frontend.
+    #
     @issues = Issue.all.sort_by { |d| d.score}.reverse!
 
     #render json: @issues

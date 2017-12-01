@@ -12,7 +12,9 @@
 import { Component, OnInit } from '@angular/core';
 //Import HttpClient for API access
 import { HttpClient } from '@angular/common/http';
+//Forms for report submission
 import { FormsModule } from '@angular/forms';
+//Service to force page change.
 import { StateService } from '@uirouter/core';
 
 @Component({
@@ -24,7 +26,10 @@ export class ReportComponent implements OnInit {
 
   submitted = false;
   constructor(private http: HttpClient, public stateService: StateService) { }
-  
+
+  /*
+   * POST an issue.
+   */
   onSubmit (form: any) {
   	console.log(form);
   	const req = this.http.post('http://localhost:3000/issues', {

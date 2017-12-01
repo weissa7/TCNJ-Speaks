@@ -6,13 +6,13 @@
  * Project Description: Bring awareness to community about relevant social justice issues.
  * File Name: statistics.component.ts
  * File Description: Defines the statistic component of the application.
- * Last Modified: 11/10/17 (m/d/y)
+ * Last Modified: 12/01/17 (m/d/y)
 */
 
 import { Component, OnInit} from '@angular/core';
 //Import HttpClient for API access
 import { HttpClient } from '@angular/common/http';
-import {NgxChartsModule} from '@swimlane/ngx-charts';
+//Chart for statistics display
 import { ChartsModule } from 'ng2-charts';
 
 @Component({
@@ -21,29 +21,34 @@ import { ChartsModule } from 'ng2-charts';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
+
+  //JSON object to hold all issues in the system
   issues;
+
+  //Hide the chart until true
   show: boolean = false;
 
   constructor(private http: HttpClient) {
     //Gather data from backend on issues
-    this.http.get('http://localhost:3000/issues')
-    .subscribe(data => { this.issues = data});
-    
+    this.pullNewData();
+
+    //Delayed call to update chart. Needed to populate chart correctly.
     setTimeout(()=>{this.show = true, this.updateChart()}, 140);
   }
 
-  ngOnInit() {
-  	//Gather data from backend on issues
-  	//this.http.get('http://localhost:3000/issues')
-	  //.subscribe(data => { this.issues = data});
-    //this.randomize();
-  }
+  ngOnInit() { }
 
+  /*
+   * Grab current JSON data from API.
+   */
   pullNewData() {
     this.http.get('http://localhost:3000/issues')
     .subscribe(data => { this.issues = data});
   }
 
+  /*
+   * POST an upvote.
+   */
   upvote(issue) {
   	console.log("Upvoting", issue);
   	const req = this.http.post('http://localhost:3000/issues/' + issue.id + '/upvotes', issue)
@@ -59,6 +64,9 @@ export class StatisticsComponent implements OnInit {
       );
   }
 
+  /*
+   * POST a downvote.
+   */
   downvote(issue) {
   	console.log("Downvoting", issue);
   	const req = this.http.post('http://localhost:3000/issues/' + issue.id + '/downvotes', issue)
@@ -83,6 +91,10 @@ export class StatisticsComponent implements OnInit {
   public barChartType:string = 'bar';
   public barChartLegend:boolean = true;
  
+
+   /*
+   * Initial chart information. Cannot be left blank.
+   */
   public barChartData:any[] = [
     {data: [0], label: ''},
     {data: [0], label: ''},
@@ -100,7 +112,6 @@ export class StatisticsComponent implements OnInit {
  
   /*
    * Updates chart information.
-   *
    */
   public updateChart():void {
 

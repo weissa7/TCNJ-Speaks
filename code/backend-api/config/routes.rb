@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'downvotes/create'
-
-  get 'downvotes/destroy'
-
+  # Hierarchy of the system. Each issue has many upvotes and downvotes.
+  #
+  # Issue (INDEX, SHOW, CREATE, UPDATE, DESTROY)
+  #   - Upvotes (CREATE, DESTROY)
+  #   - Downvotes (CREATE, DESTROY)
+  #
   resources :issues do
       resources :upvotes, only: [:create, :destroy]
       resources :downvotes, only: [:create, :destroy]
