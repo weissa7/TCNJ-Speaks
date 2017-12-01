@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129031244) do
+ActiveRecord::Schema.define(version: 20171130235810) do
 
   create_table "issues", force: :cascade do |t|
     t.string "title"
@@ -19,19 +19,11 @@ ActiveRecord::Schema.define(version: 20171129031244) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "vote_managers", force: :cascade do |t|
+  create_table "upvotes", force: :cascade do |t|
     t.integer "issue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["issue_id"], name: "index_vote_managers_on_issue_id"
-  end
-
-  create_table "votes", force: :cascade do |t|
-    t.integer "value"
-    t.integer "vote_manager_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["vote_manager_id"], name: "index_votes_on_vote_manager_id"
+    t.index ["issue_id"], name: "index_upvotes_on_issue_id"
   end
 
 end

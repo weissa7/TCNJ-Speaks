@@ -1,15 +1,11 @@
 class Issue < ApplicationRecord
-  has_one :vote_manager
-  accepts_nested_attributes_for :vote_manager
-  has_many :votes, through: :vote_manager
+  has_many :upvotes, dependent: :destroy
 
   validates :title, presence: true, uniqueness: true
   validates :description, presence: true, uniqueness: true
 
-  before_create :add_vote_manager
-
-  def add_vote_manager
-    build_vote_manager()
-    true
+  def score
+    upvotes.count
   end
+
 end

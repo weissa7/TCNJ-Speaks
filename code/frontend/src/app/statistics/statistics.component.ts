@@ -30,7 +30,7 @@ export class StatisticsComponent implements OnInit {
 
   upvote(issue) {
   	console.log("Upvoting", issue);
-  	const req = this.http.put('http://localhost:3000/issue/' + issue.id + 'upvote', issue)
+  	const req = this.http.post('http://localhost:3000/issues/' + issue.id + '/upvotes', issue)
       .subscribe(
         res => {
           console.log(res);

@@ -5,8 +5,8 @@ class IssuesController < ApplicationController
   def index
     @issues = Issue.all
 
-    render json: @issues
-
+    #render json: @issues
+    render :json => @issues.to_json(:include => :upvotes)
   end
 
   # GET /issues/1
@@ -23,12 +23,6 @@ class IssuesController < ApplicationController
     else
       render json: @issue.errors, status: :unprocessable_entity
     end
-  end
-
-  # POST /issue/upvote
-  def upvote
-    @issue = Issue.find(params[:id])
-    @vote = @issue.vote
   end
 
   # PATCH/PUT /issues/1
