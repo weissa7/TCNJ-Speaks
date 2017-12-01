@@ -34,7 +34,7 @@ export class ReportComponent implements OnInit {
    */
   onSubmit (form: any) {
   	console.log(form);
-  	const req = this.http.post('http://localhost:3000/issues', {
+  	const req = this.http.post('http://csc415-server23.hpc.tcnj.edu:3000/issues', {
       title: form.title,
       description: form.description
     })

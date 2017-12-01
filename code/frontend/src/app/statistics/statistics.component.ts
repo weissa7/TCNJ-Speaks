@@ -44,7 +44,7 @@ export class StatisticsComponent implements OnInit {
    * Grab current JSON data from API.
    */
   pullNewData() {
-    this.http.get('http://10.18.8.123:3000/issues')
+    this.http.get('http://csc415-server23.hpc.tcnj.edu:3000/issues')
     .subscribe(data => { this.issues = data});
   }
 
@@ -53,7 +53,7 @@ export class StatisticsComponent implements OnInit {
    */
   upvote(issue) {
   	console.log("Upvoting", issue);
-  	const req = this.http.post('http://localhost:3000/issues/' + issue.id + '/upvotes', issue)
+  	const req = this.http.post('http://csc415-server23.hpc.tcnj.edu:3000/issues/' + issue.id + '/upvotes', issue)
       .subscribe(
         res => {
           console.log(res);
@@ -71,7 +71,7 @@ export class StatisticsComponent implements OnInit {
    */
   downvote(issue) {
   	console.log("Downvoting", issue);
-  	const req = this.http.post('http://localhost:3000/issues/' + issue.id + '/downvotes', issue)
+  	const req = this.http.post('http://csc415-server23.hpc.tcnj.edu:3000/issues/' + issue.id + '/downvotes', issue)
       .subscribe(
         res => {
           console.log(res);
