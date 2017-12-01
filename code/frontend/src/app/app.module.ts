@@ -29,6 +29,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     HttpClientModule, //Must be defined after BrowserModule
     FormsModule,
     NgxChartsModule,
+    ChartsModule,
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],

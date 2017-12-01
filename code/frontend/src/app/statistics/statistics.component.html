@@ -18,9 +18,20 @@
 	</div>
 
 	<div class="jumbotron-fluid text-center">
-		<hr class="my-4">
-		<p>Stats go here pls</p>
-		Yet
+		    
+			<div *ngIf="show">
+		      <div style="display: block">
+		        <canvas baseChart
+		                [datasets]="barChartData"
+		                [labels]="barChartLabels"
+		                [options]="barChartOptions"
+		                [legend]="barChartLegend"
+		                [chartType]="barChartType"
+		                (chartHover)="chartHovered($event)"
+		                (chartClick)="chartClicked($event)"></canvas>
+		      </div>
+		     </div>
+
 		<hr class="my-4">
 	</div>
 
