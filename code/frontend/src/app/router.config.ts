@@ -9,6 +9,8 @@
  * Last Modified: 11/10/17 (m/d/y)
 */
 
+/* Created for UI-Router capabilities. */
+
 import { UIRouter, Category } from '@uirouter/core';
 
 export function routerConfigFn(router: UIRouter) {

@@ -7,7 +7,7 @@
  * Project Description: Bring awareness to community about relevant social justice issues.
  * File Name: report.component.html
  * File Description: HTML information of the report component.
- * Last Modified: 11/10/17 (m/d/y)
+ * Last Modified: 11/30/17 (m/d/y)
 -->
 
 <div class="container">
@@ -17,17 +17,20 @@
 		<hr class="my-4">
 	</div>
 
-	<div class="form-group">
-	  <label for="usr">Title:</label>
-	  <input type="text" class="form-control" id="title">
-	</div>
-	<div class="form-group">
-	  <label for="comment">Description:</label>
-	  <textarea class="form-control" rows="8" id="description"></textarea>
-	</div>
+	<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+		<div class="form-group">
+		  <label for="usr">Title: </label>
+		  <input type="text" class="form-control" name="title" ngModel required>
 
-	<div class="row container">
-		<button type="button" uiSref="home" class="btn btn-danger pull-left">Cancel</button>
-		<button type="button" uiSref="home" class="btn btn-success pull-right">Submit</button>
-	</div>
+		</div>
+		<div class="form-group">
+		  <label for="comment">Description: </label>
+		  <textarea class="form-control" rows="8"  name="description" ngModel required></textarea>
+		</div>
+
+		<div class="row container">
+			<button type="button" uiSref="home" class="btn btn-danger pull-left">Cancel</button>
+			<button type="submit" class="btn btn-success pull-right" [disabled]="!f.form.valid">Submit</button>
+		</div>
+	</form>
 </div>

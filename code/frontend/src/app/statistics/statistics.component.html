@@ -18,27 +18,40 @@
 	</div>
 
 	<div class="jumbotron-fluid text-center">
-		<hr class="my-4">
-		<p>Stats go here</p>
+		    
+			<div *ngIf="show">
+		      <div style="display: block">
+		        <canvas baseChart
+		                [datasets]="barChartData"
+		                [labels]="barChartLabels"
+		                [options]="barChartOptions"
+		                [legend]="barChartLegend"
+		                [chartType]="barChartType"
+		                (chartHover)="chartHovered($event)"
+		                (chartClick)="chartClicked($event)"></canvas>
+		      </div>
+		     </div>
+
 		<hr class="my-4">
 	</div>
 
-	<div class="container-fluid">
+	<div *ngFor="let issue of issues " class="container-fluid">
 		<div class="drop-shadow img-rounded">
 			<table class="table table-bordered">
 				<tbody>
 					<tr>
 						<td class="align-middle text-center col-md-3">
-							<h4> Justice Issue Topic </h4>
+							<h4> {{ issue.title }} </h4>
 						</td>
 						<td class="align-middle text-center col-md-6">
-							Justice Issue description will go here.
+							{{ issue.description }}
 						<td class="align-middle text-center col-md-1">
-							<i >+165</i>
+				
+							<i> +{{ issue.upvotes.length }}</i> / <i> -{{ issue.downvotes.length }}</i>
 						</td>
 						<td class="align-middle text-center col-md-2">
-							<button type="button" class="btn btn-success">Agree</button>
-							<button type="button" class="btn btn-danger">Disagree</button>
+							<button type="button" class="btn btn-default" (click)="upvote(issue)">Agree</button>
+							<button type="button" class="btn btn-default" (click)="downvote(issue)">Disagree</button>
 						</td>
 					</tr>
 				</tbody>
