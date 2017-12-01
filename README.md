@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running
 
-The application requires running of both the front-end and back-end applications. Currently, only a front-end prototype is implemented.
+The application requires running of both the front-end and back-end applications. See frontend and backend-api subdirectories for details.
 
 ## Commenting Structure
 
