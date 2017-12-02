@@ -31,7 +31,7 @@ export class ReportComponent implements OnInit {
 
   submitted = false;
   constructor(private http: HttpClient, public stateService: StateService) { }
-
+  errors = [];
   /*
    * POST an issue.
    */
@@ -48,7 +48,7 @@ export class ReportComponent implements OnInit {
           this.stateService.go('statistics');
         },
         err => {
-          console.log("Error occured");
+          console.log("Error occured", err);
         }
       );
   }
