@@ -25,3 +25,12 @@
     vertical-align:middle;
     text-overflow: ellipsis;
   }
+
+.show {
+	opacity: 1 !important;
+}
+
+.step {
+	opacity: 0;
+	transition: 1.2s ease-in-out all;
+}

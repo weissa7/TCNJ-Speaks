@@ -19,7 +19,7 @@
 
 	<div class="jumbotron-fluid text-center">
 		    
-			<div *ngIf="show">
+			<div [class.show]="show" class="step">
 		      <div style="display: block">
 		        <canvas baseChart
 		                [datasets]="barChartData"

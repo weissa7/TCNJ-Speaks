@@ -18,11 +18,17 @@ import { HttpClient } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts';
 //Import environment variables -- for changing between development (local) and production (VM)
 import { environment } from '../../environments/environment';
+// import fade in animation
+import { fadeInAnimation } from '../_animations/fadeInAnimation';
 
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.css']
+  styleUrls: ['./statistics.component.css'],
+  // make fade in animation available to this component
+  animations: [fadeInAnimation],
+  // attach the fade in animation to the host (root) element of this component
+  host: { '[@fadeInAnimation]': '' }
 })
 export class StatisticsComponent implements OnInit {
 
@@ -37,7 +43,7 @@ export class StatisticsComponent implements OnInit {
     this.pullNewData();
 
     //Delayed call to update chart. Needed to populate chart correctly.
-    setTimeout(()=>{this.show = true, this.updateChart()}, 240);
+    setTimeout(()=>{this.show = true, this.updateChart()}, 1000);
   }
 
   ngOnInit() { }
