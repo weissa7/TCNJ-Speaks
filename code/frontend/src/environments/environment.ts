@@ -4,6 +4,9 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
+// Change IP for development (Running locally)
+
 export const environment = {
-  production: false
+  production: false,
+  API_IP: 'http://localhost:3000/'
 };

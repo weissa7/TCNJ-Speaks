@@ -16,6 +16,8 @@ import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 //Chart for statistics display
 import { ChartsModule } from 'ng2-charts';
+//Import environment variables -- for changing between development (local) and production (VM)
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-statistics',
@@ -44,7 +46,7 @@ export class StatisticsComponent implements OnInit {
    * Grab current JSON data from API.
    */
   pullNewData() {
-    this.http.get('http://csc415-server23.hpc.tcnj.edu:3000/issues')
+    this.http.get(environment.API_IP + 'issues')
     .subscribe(data => { this.issues = data});
   }
 
@@ -53,7 +55,7 @@ export class StatisticsComponent implements OnInit {
    */
   upvote(issue) {
   	console.log("Upvoting", issue);
-  	const req = this.http.post('http://csc415-server23.hpc.tcnj.edu:3000/issues/' + issue.id + '/upvotes', issue)
+  	const req = this.http.post(environment.API_IP + 'issues/' + issue.id + '/upvotes', issue)
       .subscribe(
         res => {
           console.log(res);
@@ -71,7 +73,7 @@ export class StatisticsComponent implements OnInit {
    */
   downvote(issue) {
   	console.log("Downvoting", issue);
-  	const req = this.http.post('http://csc415-server23.hpc.tcnj.edu:3000/issues/' + issue.id + '/downvotes', issue)
+  	const req = this.http.post(environment.API_IP + 'issues/' + issue.id + '/downvotes', issue)
       .subscribe(
         res => {
           console.log(res);
@@ -85,7 +87,7 @@ export class StatisticsComponent implements OnInit {
   }
 
 
-   public barChartOptions:any = {
+  public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true
   };

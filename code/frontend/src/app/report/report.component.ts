@@ -19,6 +19,9 @@ import { FormsModule } from '@angular/forms';
 //Service to force page change.
 import { StateService } from '@uirouter/core';
 
+//Import environment variables -- for changing between development (local) and production (VM)
+import { environment } from '../../environments/environment';
+
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
@@ -34,7 +37,7 @@ export class ReportComponent implements OnInit {
    */
   onSubmit (form: any) {
   	console.log(form);
-  	const req = this.http.post('http://csc415-server23.hpc.tcnj.edu:3000/issues', {
+  	const req = this.http.post(environment.API_IP + 'issues', {
       title: form.title,
       description: form.description
     })
