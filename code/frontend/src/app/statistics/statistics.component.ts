@@ -119,15 +119,45 @@ export class StatisticsComponent implements OnInit {
    */
   public updateChart():void {
 
+  	let lowest = 0;
+  	//let highest = 0;
+  	let lw = false;
+
+
     let _lineChartData:Array<any> = new Array(this.issues.length);
     for (let i = 0; i < this.issues.length; i++) {
       _lineChartData[i] = {data: new Array(1), label: this.issues[i].title};    
       for (let j = 0; j < 1; j++) {
         _lineChartData[i].data[j] = this.issues[i].upvotes.length - this.issues[i].downvotes.length;
+
+        // Define the highest and lowest values of the data to help set axes.
+        //if(_lineChartData[i].data[j] > highest)
+        	//highest = _lineChartData[i].data[j];
+        if(_lineChartData[i].data[j] < lowest)
+        	lowest = _lineChartData[i].data[j];
       }
     }
 
+    //If the lowest value in the chart is >= 0, begin ticks at zero.
+    if (lowest >= 0) {
+    	lw = true; 
+    }
+
+    //Adjust ticks
+    let _barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    scales: {
+            yAxes: [{
+                ticks: {          	
+                    beginAtZero: lw,
+                }
+            }]
+        }
+  	};
+
     this.barChartData = _lineChartData;
+    this.barChartOptions = _barChartOptions;
 
   }
 }
